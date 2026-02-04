@@ -19,4 +19,4 @@
 
 **DropHunter** é uma aplicação web desenvolvida para monitorar preços de jogos em múltiplas lojas digitais (Steam, Epic, GOG, etc.) utilizando a API da CheapShark.
 
-O foco deste projeto foi criar uma **Experiência de Usuário (UX)** fluida e uma **Performance** excepcional, resolvendo problemas comuns de frontend como *rate-limiting* e *layout shifts*.
+O foco deste projeto foi criar uma **Experiência de Usuário (UX)** fluida e uma **Performance** excepcional, resolvendo problemas comuns de frontend.
