@@ -102,7 +102,7 @@ const Home: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight">
-                <img src="./public/icons/icon-logo.png" className="h-12 w-12" />
+                <img src="icons/icon-logo.png" className="h-12 w-12" />
                 <span className="hidden sm:inline bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                   DropHunter
                 </span>
