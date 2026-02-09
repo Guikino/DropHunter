@@ -96,7 +96,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal, store }) => {
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button asChild className="w-full" size="sm">
+        <Button asChild className="w-full" size="lg">
           <a
             href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`}
             target="_blank"

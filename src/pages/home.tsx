@@ -135,7 +135,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <main className="flex-1 overflow-y-auto p-4 lg:p-8 relative">
+          <main className="flex-1  md:p-15 overflow-y-auto p-4 lg:p-8 relative">
             <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight mb-2">
@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                 <h3 className="text-lg font-medium">No deals found</h3>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1   lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {deals.map((deal) => (
                   <DealCard
                     key={deal.dealID}
