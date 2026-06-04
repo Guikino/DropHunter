@@ -81,31 +81,33 @@ const Home: React.FC = () => {
     <HashRouter>
       <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
         <nav className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/80 border-b">
-          <div className="px-4 py-3 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center w-full md:w-auto justify-between md:justify-start gap-3">
-              <div className="lg:hidden flex items-center">
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-5 w-5" />
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="left" className="p-0 w-72">
-                    <Sidebar
-                      filters={filters}
-                      setFilters={setFilters}
-                      stores={stores}
-                      isOpen={true}
-                    />
-                  </SheetContent>
-                </Sheet>
-              </div>
+          <div className="px-3 py-2 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
+            <div className="flex items-center w-full md:w-auto justify-between md:justify-start">
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="lg:hidden flex items-center">
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <Menu className="h-5 w-5" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left" className="p-0 w-72">
+                      <Sidebar
+                        filters={filters}
+                        setFilters={setFilters}
+                        stores={stores}
+                        isOpen={true}
+                      />
+                    </SheetContent>
+                  </Sheet>
+                </div>
 
-              <div className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight">
-                <img src="icons/icon-logo.png" className="h-10 w-10 md:h-12 md:w-12" />
-                <span className="inline bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                  DropHunter
-                </span>
+                <div className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight">
+                  <img src="icons/icon-logo.png" className="h-8 w-8 md:h-12 md:w-12" />
+                  <span className="inline bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                    DropHunter
+                  </span>
+                </div>
               </div>
               
               <div className="md:hidden">
@@ -113,7 +115,7 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center w-full md:w-auto justify-between md:justify-end gap-4">
+            <div className="flex items-center w-full md:w-auto justify-between md:justify-end gap-3 md:gap-4">
               <div className="hidden md:block">
                 <ModeToggle />
               </div>
@@ -156,7 +158,7 @@ const Home: React.FC = () => {
             </div>
 
             {isLoading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
   {Array.from({ length: 8 }).map((_, i) => (
     <div key={i} className="space-y-3">
       <Skeleton className="aspect-video w-full rounded-xl" />
@@ -183,7 +185,7 @@ const Home: React.FC = () => {
                 <h3 className="text-lg font-medium">No deals found</h3>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {deals.map((deal) => (
                   <DealCard
                     key={deal.dealID}
