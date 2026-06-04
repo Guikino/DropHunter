@@ -135,8 +135,8 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <main className="flex-1  md:p-15 overflow-y-auto p-4 lg:p-8 relative">
-            <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <main className="flex-1 overflow-y-auto p-4 lg:p-8 relative">
+            <div className="mb-6 flex flex-col justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight mb-2">
                   Latest Deals
@@ -150,15 +150,15 @@ const Home: React.FC = () => {
             </div>
 
             {isLoading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={i} className="space-y-3">
-                    <Skeleton className="h-[180px] w-full rounded-xl" />
-                    <Skeleton className="h-4 w-[250px]" />
-                    <Skeleton className="h-4 w-[200px]" />
-                  </div>
-                ))}
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  {Array.from({ length: 8 }).map((_, i) => (
+    <div key={i} className="space-y-3">
+      <Skeleton className="aspect-video w-full rounded-xl" />
+      <Skeleton className="h-4 w-3/4" />
+      <Skeleton className="h-4 w-1/2" />
+    </div>
+  ))}
+</div>
             ) : isError ? (
               <div className="flex flex-col items-center justify-center h-[50vh] gap-4 text-center">
                 <AlertCircle className="h-12 w-12 text-destructive" />
@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                 <h3 className="text-lg font-medium">No deals found</h3>
               </div>
             ) : (
-              <div className="grid grid-cols-1   lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {deals.map((deal) => (
                   <DealCard
                     key={deal.dealID}

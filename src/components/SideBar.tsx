@@ -22,22 +22,20 @@ interface SidebarProps {
   isOpen?: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ filters, setFilters, stores }) => {
+const Sidebar: React.FC<SidebarProps> = ({ filters, setFilters, stores, isOpen }) => {
   const updateFilter = (key: keyof FilterState, value: any) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
   return (
     <aside
-      className="
-      fixed left-0 top-[57px] bottom-0 
-      w-64                             
-      bg-background/95 backdrop-blur   
-      border-r border-border
+      className={`
+      ${!isOpen ? "fixed left-0 top-[57px] bottom-0 w-64 border-r border-border" : "w-full h-full border-0"}
+      bg-background/95 backdrop-blur
       max-md:border-0
       overflow-y-auto               
       p-6 space-y-8 
-      z-40"
+      z-40`}
     >
       <div className="flex items-center gap-2 text-primary mb-2">
         <Filter className="h-5 w-5" />
