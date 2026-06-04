@@ -81,9 +81,9 @@ const Home: React.FC = () => {
     <HashRouter>
       <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
         <nav className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/80 border-b">
-          <div className="px-4 py-3 lg:px-6 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="lg:hidden">
+          <div className="px-4 py-3 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center w-full md:w-auto justify-between md:justify-start gap-3">
+              <div className="lg:hidden flex items-center">
                 <Sheet>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
@@ -102,31 +102,37 @@ const Home: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2 text-primary font-bold text-xl tracking-tight">
-                <img src="icons/icon-logo.png" className="h-12 w-12" />
-                <span className="hidden sm:inline bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                <img src="icons/icon-logo.png" className="h-10 w-10 md:h-12 md:w-12" />
+                <span className="inline bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                   DropHunter
                 </span>
               </div>
+              
+              <div className="md:hidden">
+                <ModeToggle />
+              </div>
             </div>
 
-            <div className="flex items-center justify-content gap-4">
-              <ModeToggle />
+            <div className="flex items-center w-full md:w-auto justify-between md:justify-end gap-4">
+              <div className="hidden md:block">
+                <ModeToggle />
+              </div>
 
-              <div className="flex-1 max-w-md relative">
+              <div className="flex-1 md:flex-none w-full md:max-w-md relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="search"
                   placeholder="Search games..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-secondary/50 border-input focus-visible:ring-primary w-[200px] sm:w-[300px]"
+                  className="pl-10 bg-secondary/50 border-input focus-visible:ring-primary w-full md:w-[300px]"
                 />
               </div>
             </div>
           </div>
         </nav>
 
-        <div className="flex flex-1">
+        <div className="flex flex-1 min-w-0">
           <div className="hidden lg:block shrink-0 w-64">
             <Sidebar
               filters={filters}
@@ -135,7 +141,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <main className="flex-1 overflow-y-auto p-4 lg:p-8 relative">
+          <main className="flex-1 min-w-0 overflow-y-auto p-4 lg:p-8 relative">
             <div className="mb-6 flex flex-col justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight mb-2">
